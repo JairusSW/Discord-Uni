@@ -16,7 +16,7 @@ module.exports = {
 						
 			const noChannel = new MessageEmbed()
 			.setTitle('Nothing To Stop.')
-			.setColor('#31A5A5')
+			.setColor('#ff5050')
 			.setTimestamp()
 			.setFooter(message.author.username)
 
@@ -32,7 +32,7 @@ module.exports = {
 			
 			const noStop = new MessageEmbed()
 			.setTitle('Nothing To Stop.')
-			.setColor('#31A5A5')
+			.setColor('#ff5050')
 			.setTimestamp()
 			.setFooter(message.author.username)
 
@@ -50,7 +50,7 @@ module.exports = {
 
 		const Stop = new MessageEmbed()
 		.setTitle('Stopped.')
-		.setColor('#31A5A5')
+		.setColor('#ff5050')
 		.setTimestamp()
 		.setFooter(message.author.username)
 
@@ -60,7 +60,7 @@ module.exports = {
 
 			const Unavaliable = new MessageEmbed()
 			.setTitle('Something Happened.')
-			.setColor('#31A5A5')
+			.setColor('#ff5050')
 			.setTimestamp()
 			.setFooter(message.author.username)
 

@@ -20,7 +20,7 @@ module.exports = {
 
 			const Pause = new MessageEmbed()
 			.setTitle('Paused.')
-			.setColor('#31A5A5')
+			.setColor('#ff5050')
 			.setTimestamp()
 			.setFooter(message.author.username)
 
@@ -32,7 +32,7 @@ module.exports = {
 		
 		const noPause = new MessageEmbed()
 		.setTitle('Nothing To Pause.')
-		.setColor('#31A5A5')
+		.setColor('#ff5050')
 		.setTimestamp()
 		.setFooter(message.author.username)
 
@@ -42,7 +42,7 @@ module.exports = {
 
 		const Unavaliable = new MessageEmbed()
 		.setTitle('Something Happened.')
-		.setColor('#31A5A5')
+		.setColor('#ff5050')
 		.setTimestamp()
 		.setFooter(message.author.username)
 

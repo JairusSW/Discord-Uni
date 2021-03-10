@@ -16,7 +16,7 @@ module.exports = {
             
             const noShuffle = new MessageEmbed()
 			.setTitle('Nothing To Shuffle.')
-			.setColor('#31A5A5')
+			.setColor('#ff5050')
 			.setTimestamp()
 			.setFooter(message.author.username)
 
@@ -33,7 +33,7 @@ module.exports = {
 
             const shuffleOff = new MessageEmbed()
             .setTitle('Shuffle Off.')
-            .setColor('#31A5A5')
+            .setColor('#ff5050')
             .setTimestamp()
             .setFooter(message.author.username)
 
@@ -49,7 +49,7 @@ module.exports = {
 
             const shuffleOn = new MessageEmbed()
             .setTitle('Shuffle On.')
-            .setColor('#31A5A5')
+            .setColor('#ff5050')
             .setTimestamp()
             .setFooter(message.author.username)
 
@@ -61,7 +61,7 @@ module.exports = {
 
 		const Unavaliable = new MessageEmbed()
 		.setTitle('Something Happened.')
-		.setColor('#31A5A5')
+		.setColor('#ff5050')
 		.setTimestamp()
 		.setFooter(message.author.username)
 

@@ -52,7 +52,7 @@ module.exports = {
 
 				const PlaylistNot = new MessageEmbed()
 				.setTitle(`Could Not Find Playlist`)
-				.setColor('#31A5A5')
+				.setColor('#ff5050')
 				.setTimestamp()
 				.setFooter(message.author.username)
 				
@@ -83,7 +83,7 @@ module.exports = {
 			.addField('Songs', queueData['songs'].length)
 			.addField('Length', getLength(queueData['songs']))
 			.setThumbnail(queueImage)
-			.setColor('#31A5A5')
+			.setColor('#ff5050')
 			.setTimestamp()
 			.setFooter(message.author.username)
 
@@ -95,7 +95,7 @@ module.exports = {
 
 			const PlaylistKill = new MessageEmbed()
 			.setTitle(`Could Not Find Playlist`)
-			.setColor('#31A5A5')
+			.setColor('#ff5050')
 			.setTimestamp()
 			.setFooter(message.author.username)
 			
@@ -109,7 +109,7 @@ module.exports = {
 
 		const Unavaliable = new MessageEmbed()
 		.setTitle('Something Happened.')
-		.setColor('#31A5A5')
+		.setColor('#ff5050')
 		.setTimestamp()
 		.setFooter(message.author.username)
 

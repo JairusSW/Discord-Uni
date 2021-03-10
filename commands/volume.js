@@ -16,7 +16,7 @@ module.exports = {
 
 			const noChannel = new MessageEmbed()
 			.setTitle('Nothing Is Playing.')
-			.setColor('#31A5A5')
+			.setColor('#ff5050')
 			.setTimestamp()
 			.setFooter(message.author.username)
 
@@ -32,7 +32,7 @@ module.exports = {
 
 			const noVolume = new MessageEmbed()
 			.setTitle('Nothing To Crank.')
-			.setColor('#31A5A5')
+			.setColor('#ff5050')
 			.setTimestamp()
 			.setFooter(message.author.username)
 
@@ -44,7 +44,7 @@ module.exports = {
 
 		const volumePanel = new MessageEmbed()
 		.setTitle(`Double Click To Toggle Volume.`)
-		.setColor('#31A5A5')
+		.setColor('#ff5050')
 		.setTimestamp()
 		.setFooter(message.author.username)
 
@@ -114,7 +114,7 @@ module.exports = {
 
 				const Unavaliable = new MessageEmbed()
 		.setTitle('Something Happened.')
-		.setColor('#31A5A5')
+		.setColor('#ff5050')
 		.setTimestamp()
 		.setFooter(message.author.username)
 

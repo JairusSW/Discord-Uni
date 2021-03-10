@@ -22,7 +22,7 @@ module.exports = {
 
 			const Remove = new MessageEmbed()
 			.setTitle('Song Removed.')
-			.setColor('#31A5A5')
+			.setColor('#ff5050')
 			.setTimestamp()
 			.setFooter(message.author.username)
 
@@ -34,7 +34,7 @@ module.exports = {
 		
 		const noRemove = new MessageEmbed()
 		.setTitle('Nothing To Remove.')
-		.setColor('#31A5A5')
+		.setColor('#ff5050')
 		.setTimestamp()
 		.setFooter(message.author.username)
 
@@ -44,7 +44,7 @@ module.exports = {
 
 		const Unavaliable = new MessageEmbed()
 		.setTitle('Something Happened.')
-		.setColor('#31A5A5')
+		.setColor('#ff5050')
 		.setTimestamp()
 		.setFooter(message.author.username)
 

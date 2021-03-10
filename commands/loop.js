@@ -16,7 +16,7 @@ module.exports = {
             
             const noloop = new MessageEmbed()
 			.setTitle('Nothing To Loop.')
-			.setColor('#31A5A5')
+			.setColor('#ff5050')
 			.setTimestamp()
 			.setFooter(message.author.username)
 
@@ -33,7 +33,7 @@ module.exports = {
 
             const loopOff = new MessageEmbed()
             .setTitle('Loop Off.')
-            .setColor('#31A5A5')
+            .setColor('#ff5050')
             .setTimestamp()
             .setFooter(message.author.username)
 
@@ -49,7 +49,7 @@ module.exports = {
 
             const loopOn = new MessageEmbed()
             .setTitle('Loop On.')
-            .setColor('#31A5A5')
+            .setColor('#ff5050')
             .setTimestamp()
             .setFooter(message.author.username)
 
@@ -61,7 +61,7 @@ module.exports = {
 
 				const Unavaliable = new MessageEmbed()
 		.setTitle('Something Happened.')
-		.setColor('#31A5A5')
+		.setColor('#ff5050')
 		.setTimestamp()
 		.setFooter(message.author.username)
 

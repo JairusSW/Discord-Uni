@@ -19,7 +19,7 @@ module.exports = {
 						
 			const noSong = new MessageEmbed()
 			.setTitle('Nothing Is Playing.')
-			.setColor('#31A5A5')
+			.setColor('#ff5050')
 			.setTimestamp()
 			.setFooter(message.author.username)
 
@@ -42,7 +42,7 @@ module.exports = {
 		.addField(`ID `, `${song.id}`, true)
 		.addField(`Position `, `[${songLength((Date.now() - userQueue.current) / 1000)}/${songLength(song.length)}]`)
 		.setImage(`${song.thumbnail}`)
-		.setColor('#31A5A5')
+		.setColor('#ff5050')
 		.setTimestamp()
 		.setFooter(message.author.username)
 		
@@ -56,7 +56,7 @@ module.exports = {
 
 				const Unavaliable = new MessageEmbed()
 		.setTitle('Something Happened.')
-		.setColor('#31A5A5')
+		.setColor('#ff5050')
 		.setTimestamp()
 		.setFooter(message.author.username)
 

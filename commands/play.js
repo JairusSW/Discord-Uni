@@ -60,7 +60,7 @@ module.exports = {
 
 			const not_voice_channel = new MessageEmbed()
 			.setTitle('Enter A Voice Channel.')
-			.setColor('#31A5A5')
+			.setColor('#ff5050')
 			.setTimestamp()
 			.setFooter(message.author.username)
 
@@ -83,7 +83,7 @@ module.exports = {
 
 				const full_channel = new MessageEmbed()
 				.setTitle('Channel Is Full. Select A Different Channel.')
-				.setColor('#31A5A5')
+				.setColor('#ff5050')
 				.setTimestamp()
 				.setFooter(message.author.username)
 	
@@ -103,7 +103,7 @@ module.exports = {
 		
 			const connect_permission = new MessageEmbed()
 			.setTitle('I Don\'t Have Permission To Join')
-			.setColor('#31A5A5')
+			.setColor('#ff5050')
 			.setTimestamp()
 			.setFooter(message.author.username)
 
@@ -117,7 +117,7 @@ module.exports = {
 
 			const speak_permission = new MessageEmbed()
 			.setTitle('I Don\'t Have Permission To Speak')
-			.setColor('#31A5A5')
+			.setColor('#ff5050')
 			.setTimestamp()
 			.setFooter(message.author.username)
 
@@ -245,7 +245,7 @@ module.exports = {
 			
 			const song_unavaliable = new MessageEmbed()
 			.setTitle('Song Is Unavaliable')
-			.setColor('#31A5A5')
+			.setColor('#ff5050')
 			.setTimestamp()
 			.setFooter(message.author.username)
 
@@ -263,7 +263,7 @@ module.exports = {
 
 				const add_queue = new MessageEmbed()
 				.setTitle('Song Added To Queue.')
-				.setColor('#31A5A5')
+				.setColor('#ff5050')
 				.setTimestamp()
 				.setFooter(message.author.username)
 				
@@ -277,7 +277,7 @@ module.exports = {
 	
 				const add_pl = new MessageEmbed()
 				.setTitle('Playlist Added To Queue.')
-				.setColor('#31A5A5')
+				.setColor('#ff5050')
 				.setTimestamp()
 				.setFooter(message.author.username)
 				
@@ -368,7 +368,7 @@ module.exports = {
 
 						const queueDone = new MessageEmbed()
 						.setTitle(`Finished With Queue.`)
-						.setColor('#31A5A5')
+						.setColor('#ff5050')
 						.setTimestamp()
 						.setFooter(message.author.username)
 						
@@ -395,7 +395,7 @@ module.exports = {
 					.addField(`ID `, `${currentSong.id}`)
 					.addField(`Position `, `[0:00/${songLength(song.length)}]`)
 					.setImage(`${currentSong.thumbnail}`)
-					.setColor('#31A5A5')
+					.setColor('#ff5050')
 					.setTimestamp()
 					.setFooter(message.author.username)
 					
@@ -422,7 +422,7 @@ module.exports = {
 				.addField(`ID `, `${song.id}`)
 				.addField(`Position `, `[0:00/${songLength(song.length)}]`)
 				.setImage(`${song.thumbnail}`)
-				.setColor('#31A5A5')
+				.setColor('#ff5050')
 				.setTimestamp()
 				.setFooter(message.author.username)
 				
@@ -436,7 +436,7 @@ module.exports = {
 				.addField(`Volume`, `${song.volume * 10}`)
         .addField(`Position `, `[0:00/${songLength(song.length)}]`)
 				.setThumbnail(`${song.thumbnail}`)
-				.setColor('#31A5A5')
+				.setColor('#ff5050')
 				.setFooter(`----------------------------------------------------------------------------------------------`)
 
 				const control = await message.member.send(controlPanel)
@@ -477,7 +477,7 @@ module.exports = {
 
 			const song_error = new MessageEmbed()
 			.setTitle('Could Not Play Song.')
-			.setColor('#31A5A5')
+			.setColor('#ff5050')
 			.setTimestamp()
 			.setFooter(message.author.username)
 			
@@ -493,7 +493,7 @@ module.exports = {
 
 				const Unavaliable = new MessageEmbed()
 				.setTitle('Something Happened.')
-				.setColor('#31A5A5')
+				.setColor('#ff5050')
 				.setTimestamp()
 				.setFooter(message.author.username)
 

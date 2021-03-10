@@ -29,7 +29,7 @@ module.exports = {
         .addField('Channels:', format(channelList))
         .addField('Owner: ', 'JairusSW#3022')
         .setThumbnail(message.client.user.displayAvatarURL())
-        .setColor('#31A5A5')
+        .setColor('#ff5050')
         .setTimestamp()
         .setFooter(message.author.username)
 

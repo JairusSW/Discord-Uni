@@ -11,7 +11,7 @@ module.exports = {
 
 			const Invite = new MessageEmbed()
 			.setTitle(`https://discord.com/oauth2/authorize?client_id=${message.client.user.id}&scope=bot&permissions=66113344`)
-			.setColor('#31A5A5')
+			.setColor('#ff5050')
 			.setTimestamp()
 			.setFooter(message.author.username)
 
@@ -22,7 +22,7 @@ module.exports = {
 
 			const Unavaliable = new MessageEmbed()
 			.setTitle('Something Happened.')
-			.setColor('#31A5A5')
+			.setColor('#ff5050')
 			.setTimestamp()
 			.setFooter(message.author.username)
 

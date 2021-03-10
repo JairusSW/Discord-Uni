@@ -90,7 +90,7 @@ client.on('messageReactionAdd', async (reaction, user) => {
 					.addField(`Volume`, `${userQueue.volume * 10}`)
 					.addField(`Position `, `[${songLength((Date.now() - userQueue.current) / 1000)}/${songLength(song.length)}]`)
 					.setThumbnail(`${song.thumbnail}`)
-					.setColor('#31A5A5')
+					.setColor('#ff5050')
 					.setFooter(`----------------------------------------------------------------------------------------------`)
 
 					reaction.message.edit(controlPanelEdit)
@@ -117,7 +117,7 @@ client.on('messageReactionAdd', async (reaction, user) => {
 					.addField(`Volume`, `${userQueue.volume * 10}`)
           			.addField(`Position `, `[${songLength((Date.now() - userQueue.current) / 1000)}/${songLength(song.length)}]`)
 					.setThumbnail(`${song.thumbnail}`)
-					.setColor('#31A5A5')
+					.setColor('#ff5050')
 					.setFooter(`----------------------------------------------------------------------------------------------`)
 
 
@@ -139,7 +139,7 @@ client.on('messageReactionAdd', async (reaction, user) => {
 					.addField(`Volume`, `${userQueue.volume * 10}`)
           			.addField(`Position `, `[${songLength((Date.now() - userQueue.current) / 1000)}/${songLength(song.length)}]`)
 					.setThumbnail(`${song.thumbnail}`)
-					.setColor('#31A5A5')
+					.setColor('#ff5050')
 					.setFooter(`----------------------------------------------------------------------------------------------`)
 
 					reaction.message.edit(controlPanelEdit)
@@ -162,7 +162,7 @@ client.on('messageReactionAdd', async (reaction, user) => {
 					.addField(`Volume`, `${userQueue.volume * 10}`)
           			.addField(`Position `, `[${songLength((Date.now() - userQueue.current) / 1000)}/${songLength(song.length)}]`)
 					.setThumbnail(`${song.thumbnail}`)
-					.setColor('#31A5A5')
+					.setColor('#ff5050')
 					.setFooter(`----------------------------------------------------------------------------------------------`)
 
 					reaction.message.edit(controlPanelEdit)
@@ -183,7 +183,7 @@ client.on('messageReactionAdd', async (reaction, user) => {
 					.addField(`Volume`, `${userQueue.volume * 10}`)
           			.addField(`Position `, `[${songLength((Date.now() - userQueue.current) / 1000)}/${songLength(song.length)}]`)
 					.setThumbnail(`${song.thumbnail}`)
-					.setColor('#31A5A5')
+					.setColor('#ff5050')
 					.setFooter(`----------------------------------------------------------------------------------------------`)
 
 					reaction.message.edit(controlPanelEdit)
@@ -204,7 +204,7 @@ client.on('messageReactionAdd', async (reaction, user) => {
 					.addField(`Volume`, `${userQueue.volume * 10}`)
           			.addField(`Position `, `[${songLength((Date.now() - userQueue.current) / 1000)}/${songLength(song.length)}]`)
 					.setThumbnail(`${song.thumbnail}`)
-					.setColor('#31A5A5')
+					.setColor('#ff5050')
 					.setFooter(`----------------------------------------------------------------------------------------------`)
 					reaction.message.edit(controlPanelEdit)
 
@@ -226,7 +226,7 @@ client.on('messageReactionAdd', async (reaction, user) => {
 					.addField(`Volume`, `${userQueue.volume * 10}`)
           			.addField(`Position `, `[${songLength((Date.now() - userQueue.current) / 1000)}/${songLength(song.length)}]`)
 					.setThumbnail(`${song.thumbnail}`)
-					.setColor('#31A5A5')
+					.setColor('#ff5050')
 					.setFooter(`----------------------------------------------------------------------------------------------`)
 
 					reaction.message.edit(controlPanelEdit)
@@ -249,7 +249,7 @@ client.on('messageReactionAdd', async (reaction, user) => {
 					.addField(`Volume`, `${userQueue.volume * 10}`)
           			.addField(`Position `, `[${songLength((Date.now() - userQueue.current) / 1000)}/${songLength(song.length)}]`)
 					.setThumbnail(`${song.thumbnail}`)
-					.setColor('#31A5A5')
+					.setColor('#ff5050')
 					.setFooter(`----------------------------------------------------------------------------------------------`)
 
 					reaction.message.edit(controlPanelEdit)
@@ -284,7 +284,7 @@ client.on('messageReactionAdd', async (reaction, user) => {
 					.addField(`Volume`, `${userQueue.volume * 10}`)
           			.addField(`Position `, `[${songLength((Date.now() - userQueue.current) / 1000)}/${songLength(song.length)}]`)
 					.setThumbnail(`${song.thumbnail}`)
-					.setColor('#31A5A5')
+					.setColor('#ff5050')
 					.setFooter(`----------------------------------------------------------------------------------------------`)
 
 					reaction.message.edit(controlPanelEdit)
@@ -343,7 +343,7 @@ client.on('message', message => {
 
 		const serverOnly = new MessageEmbed()
 		.setTitle(`Please Move To A Server.`)
-		.setColor('#31A5A5')
+		.setColor('#ff5050')
 		.setTimestamp()
 		.setFooter(message.author.username)
 
@@ -357,7 +357,7 @@ client.on('message', message => {
 
 		const noArgs = new MessageEmbed()
 		.setTitle(`Please Provide The Needed Input.`)
-		.setColor('#31A5A5')
+		.setColor('#ff5050')
 		.setTimestamp()
 		.setFooter(message.author.username)
 
@@ -389,7 +389,7 @@ client.on('message', message => {
 
 			const slowDown = new MessageEmbed()
 			.setTitle(`Slow Down. ${ms(timeLeft | 0)} Left.`)
-			.setColor('#31A5A5')
+			.setColor('#ff5050')
 			.setTimestamp()
 			.setFooter(message.author.username)
 
@@ -413,7 +413,7 @@ client.on('message', message => {
 
 		const errorMessage = new MessageEmbed()
 		.setTitle(`Something Happened. Try Again.`)
-		.setColor('#31A5A5')
+		.setColor('#ff5050')
 		.setTimestamp()
 		.setFooter(message.author.username)
 

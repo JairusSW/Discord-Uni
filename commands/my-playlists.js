@@ -36,7 +36,7 @@ module.exports = {
 
 				const noPlaylist = new MessageEmbed()
 				.setTitle(`No Playlists`)
-				.setColor('#31A5A5')
+				.setColor('#ff5050')
 				.setTimestamp()
 				.setFooter(message.author.username)
 		
@@ -49,7 +49,7 @@ module.exports = {
 			const Playlist = new MessageEmbed()
 			.setTitle(`${message.author.username} - Playlists`)
 			.setThumbnail(userData.avatar)
-			.setColor('#31A5A5')
+			.setColor('#ff5050')
 			.setTimestamp()
 			.setFooter(message.author.username)
 
@@ -81,7 +81,7 @@ module.exports = {
 
 			const PlaylistKill = new MessageEmbed()
 			.setTitle(`Could Not Find Playlists`)
-			.setColor('#31A5A5')
+			.setColor('#ff5050')
 			.setTimestamp()
 			.setFooter(message.author.username)
 			
@@ -95,7 +95,7 @@ module.exports = {
 
 		const Unavaliable = new MessageEmbed()
 		.setTitle('Something Happened.')
-		.setColor('#31A5A5')
+		.setColor('#ff5050')
 		.setTimestamp()
 		.setFooter(message.author.username)
 

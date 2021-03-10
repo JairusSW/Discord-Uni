@@ -16,7 +16,7 @@ try {
 
 			const noChannel = new MessageEmbed()
 			.setTitle('Nothing Is Playing.')
-			.setColor('#31A5A5')
+			.setColor('#ff5050')
 			.setTimestamp()
 			.setFooter(message.author.username)
 
@@ -32,7 +32,7 @@ try {
 
 			const noVolume = new MessageEmbed()
 			.setTitle('Nothing To Mute.')
-			.setColor('#31A5A5')
+			.setColor('#ff5050')
 			.setTimestamp()
 			.setFooter(message.author.username)
 
@@ -50,7 +50,7 @@ try {
 
 			const MuteOff = new MessageEmbed()
 			.setTitle('Mute Off.')
-			.setColor('#31A5A5')
+			.setColor('#ff5050')
 			.setTimestamp()
 			.setFooter(message.author.username)
 	
@@ -68,7 +68,7 @@ try {
 
 			const MuteOn = new MessageEmbed()
 			.setTitle('Mute On.')
-			.setColor('#31A5A5')
+			.setColor('#ff5050')
 			.setTimestamp()
 			.setFooter(message.author.username)
 	
@@ -84,7 +84,7 @@ try {
 
 				const Unavaliable = new MessageEmbed()
 		.setTitle('Something Happened.')
-		.setColor('#31A5A5')
+		.setColor('#ff5050')
 		.setTimestamp()
 		.setFooter(message.author.username)
 

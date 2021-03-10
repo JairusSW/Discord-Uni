@@ -16,7 +16,7 @@ module.exports = {
 			
 			const noChannel = new MessageEmbed()
 			.setTitle('Nothing To Skip.')
-			.setColor('#31A5A5')
+			.setColor('#ff5050')
 			.setTimestamp()
 			.setFooter(message.author.username)
 
@@ -32,7 +32,7 @@ module.exports = {
 			
 			const noSkip = new MessageEmbed()
 			.setTitle('Nothing To Skip.')
-			.setColor('#31A5A5')
+			.setColor('#ff5050')
 			.setTimestamp()
 			.setFooter(message.author.username)
 
@@ -46,7 +46,7 @@ module.exports = {
 
 		const Skip = new MessageEmbed()
 		.setTitle('Skipped.')
-		.setColor('#31A5A5')
+		.setColor('#ff5050')
 		.setTimestamp()
 		.setFooter(message.author.username)
 
@@ -56,7 +56,7 @@ module.exports = {
 
 		const Unavaliable = new MessageEmbed()
 		.setTitle('Something Happened.')
-		.setColor('#31A5A5')
+		.setColor('#ff5050')
 		.setTimestamp()
 		.setFooter(message.author.username)
 

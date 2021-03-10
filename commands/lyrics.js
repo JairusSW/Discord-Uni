@@ -18,7 +18,7 @@ try {
 
 			const noChannel = new MessageEmbed()
 			.setTitle('Nothing Is Get.')
-			.setColor('#31A5A5')
+			.setColor('#ff5050')
 			.setTimestamp()
 			.setFooter(message.author.username)
 
@@ -34,7 +34,7 @@ try {
 
 			const noVolume = new MessageEmbed()
 			.setTitle('Nothing To Get.')
-			.setColor('#31A5A5')
+			.setColor('#ff5050')
 			.setTimestamp()
 			.setFooter(message.author.username)
 
@@ -80,7 +80,7 @@ try {
 
             const LyricsErr = new MessageEmbed()
             .setTitle('Lyrics Unavaliable.')
-            .setColor('#31A5A5')
+            .setColor('#ff5050')
             .setTimestamp()
             .setFooter(message.author.username)
 
@@ -96,7 +96,7 @@ try {
 
 				const Unavaliable = new MessageEmbed()
 		.setTitle('Something Happened.')
-		.setColor('#31A5A5')
+		.setColor('#ff5050')
 		.setTimestamp()
 		.setFooter(message.author.username)
 

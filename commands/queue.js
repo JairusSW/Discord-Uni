@@ -16,7 +16,7 @@ module.exports = {
 
 			const noQueue = new MessageEmbed()
 			.setTitle('Nothing Is Playing.')
-			.setColor('#31A5A5')
+			.setColor('#ff5050')
 			.setTimestamp()
 			.setFooter(message.author.username)
 	
@@ -28,7 +28,7 @@ module.exports = {
 
 		const Queue = new MessageEmbed()
 		.setTitle('Queue')
-		.setColor('#31A5A5')
+		.setColor('#ff5050')
 		.setTimestamp()
 		.setFooter(message.author.username)
 
@@ -58,7 +58,7 @@ module.exports = {
 
 		const Unavaliable = new MessageEmbed()
 		.setTitle('Something Happened.')
-		.setColor('#31A5A5')
+		.setColor('#ff5050')
 		.setTimestamp()
 		.setFooter(message.author.username)
 

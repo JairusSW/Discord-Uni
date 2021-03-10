@@ -24,7 +24,7 @@ module.exports = {
 
 			const noQueue = new MessageEmbed()
 			.setTitle('Nothing To Save.')
-			.setColor('#31A5A5')
+			.setColor('#ff5050')
 			.setTimestamp()
 			.setFooter(message.author.username)
 	
@@ -50,7 +50,7 @@ module.exports = {
 
 		const PlaylistName = new MessageEmbed()
 		.setTitle(`What Is The Playlist\'s Name?`)
-		.setColor('#31A5A5')
+		.setColor('#ff5050')
 		.setTimestamp()
 		.setFooter(message.author.username)
 		
@@ -95,7 +95,7 @@ module.exports = {
 			.addField('Songs', userQueue.songs.length)
 			.addField('Share', shareCode)
 			.setImage(userQueue['songs'][0].thumbnail)
-			.setColor('#31A5A5')
+			.setColor('#ff5050')
 			.setTimestamp()
 			.setFooter(message.author.username)
 
@@ -117,7 +117,7 @@ module.exports = {
 
 			const PlaylistKill = new MessageEmbed()
 			.setTitle(`No Response. Cancelling.`)
-			.setColor('#31A5A5')
+			.setColor('#ff5050')
 			.setTimestamp()
 			.setFooter(message.author.username)
 			
@@ -131,7 +131,7 @@ module.exports = {
 
 		const Unavaliable = new MessageEmbed()
 		.setTitle('Something Happened.')
-		.setColor('#31A5A5')
+		.setColor('#ff5050')
 		.setTimestamp()
 		.setFooter(message.author.username)
 
