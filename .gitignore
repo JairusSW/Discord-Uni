@@ -1,0 +1,7 @@
+node_modules
+.env
+yarn.lock
+pnpm-lock.yaml
+air5
+package-lock.json
+top.gg

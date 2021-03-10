@@ -1,0 +1,462 @@
+{
+  "Aerodactyl": {
+    "url": "https://raw.githubusercontent.com/SliceWire/Discord-Uni/master/data/monsters/Aerodactyl.png",
+    "name": "Aerodactyl",
+    "xp": 600,
+    "power": 40,
+    "attack": 70,
+    "defense": 20,
+    "habitat": "Ciffs",
+    "danger": 40,
+    "agility": 70,
+    "fear": 10,
+    "levels": [
+      120,
+      240,
+      360,
+      480,
+      600
+    ],
+    "price": 6000000
+  },
+  "Arbok": {
+    "url": "https://raw.githubusercontent.com/SliceWire/Discord-Uni/master/data/monsters/Arbok.png",
+    "name": "Arbok",
+    "xp": 550,
+    "power": 70,
+    "attack": 70,
+    "defense": 40,
+    "habitat": "Mines",
+    "danger": 50,
+    "agility": 70,
+    "fear": 20,
+    "levels": [
+      110,
+      220,
+      330,
+      440,
+      550
+    ],
+    "price": 5500000
+  },
+  "Arcanine": {
+    "url": "https://raw.githubusercontent.com/SliceWire/Discord-Uni/master/data/monsters/Arcanine.png",
+    "name": "Arcanine",
+    "xp": 250,
+    "power": 30,
+    "attack": 40,
+    "defense": 30,
+    "habitat": "Trees",
+    "danger": 20,
+    "agility": 50,
+    "fear": 10,
+    "levels": [
+      50,
+      100,
+      150,
+      200,
+      250
+    ],
+    "price": 2500000
+  },
+  "Blastoise": {
+    "url": "https://raw.githubusercontent.com/SliceWire/Discord-Uni/master/data/monsters/Blastoise.png",
+    "name": "Blastoise",
+    "xp": 350,
+    "power": 50,
+    "attack": 10,
+    "defense": 50,
+    "habitat": "Water",
+    "danger": 10,
+    "agility": 10,
+    "fear": 15,
+    "levels": [
+      70,
+      140,
+      210,
+      280,
+      350
+    ],
+    "price": 500000
+  },
+  "Charizard": {
+    "url": "https://raw.githubusercontent.com/SliceWire/Discord-Uni/master/data/monsters/Charizard.png",
+    "name": "Charizard",
+    "xp": 600,
+    "power": 50,
+    "attack": 60,
+    "defense": 40,
+    "habitat": "Cliffs",
+    "danger": 60,
+    "agility": 20,
+    "fear": 10,
+    "levels": [
+      120,
+      240,
+      360,
+      480,
+      600
+    ],
+    "price": 6000000
+  },
+  "Charmander": {
+    "url": "https://raw.githubusercontent.com/SliceWire/Discord-Uni/master/data/monsters/Charmander.png",
+    "name": "Charmander",
+    "xp": 300,
+    "power": 10,
+    "attack": 20,
+    "defense": 10,
+    "habitat": "Holes",
+    "danger": 15,
+    "agility": 20,
+    "fear": 15,
+    "levels": [
+      60,
+      120,
+      180,
+      240,
+      300
+    ],
+    "price": 300000
+  },
+  "Charmeleon": {
+    "url": "https://raw.githubusercontent.com/SliceWire/Discord-Uni/master/data/monsters/Charmeleon.png",
+    "name": "Charmeleon",
+    "xp": 250,
+    "power": 20,
+    "attack": 10,
+    "defense": 15,
+    "habitat": "Caves",
+    "danger": 15,
+    "agility": 30,
+    "fear": 20,
+    "levels": [
+      50,
+      100,
+      150,
+      200,
+      250
+    ],
+    "price": 250000
+  },
+  "Cloyster": {
+    "url": "https://raw.githubusercontent.com/SliceWire/Discord-Uni/master/data/monsters/Cloyster.png",
+    "name": "Cloyster",
+    "xp": 900,
+    "power": 70,
+    "attack": 70,
+    "defense": 90,
+    "habitat": "Rocks",
+    "danger": 80,
+    "agility": 25,
+    "fear": 10,
+    "levels": [
+      180,
+      360,
+      540,
+      720,
+      900
+    ],
+    "price": 9000000
+  },
+  "Cubone": {
+    "url": "https://raw.githubusercontent.com/SliceWire/Discord-Uni/master/data/monsters/Cubone.png",
+    "name": "Cubone",
+    "xp": 250,
+    "power": 100,
+    "attack": 25,
+    "defense": 50,
+    "habitat": "Unknown",
+    "danger": 20,
+    "agility": 10,
+    "fear": 10,
+    "levels": [
+      50,
+      100,
+      150,
+      200,
+      250
+    ],
+    "price": 2500000
+  },
+  "Ekans": {
+    "url": "https://raw.githubusercontent.com/SliceWire/Discord-Uni/master/data/monsters/Ekans.png",
+    "name": "Ekans",
+    "xp": 350,
+    "power": 50,
+    "attack": 40,
+    "defense": 30,
+    "habitat": "Caves",
+    "danger": 35,
+    "agility": 20,
+    "fear": 20,
+    "levels": [
+      70,
+      140,
+      210,
+      280,
+      350
+    ],
+    "price": 3500000
+  },
+  "Gastly": {
+    "url": "https://raw.githubusercontent.com/SliceWire/Discord-Uni/master/data/monsters/Gastly.png",
+    "name": "Gastly",
+    "xp": 800,
+    "power": 85,
+    "attack": 90,
+    "defense": 45,
+    "habitat": "Air",
+    "danger": 75,
+    "agility": 80,
+    "fear": 15,
+    "levels": [
+      160,
+      320,
+      480,
+      640,
+      800
+    ],
+    "price": 8000000
+  },
+  "Golem": {
+    "url": "https://raw.githubusercontent.com/SliceWire/Discord-Uni/master/data/monsters/Golem.png",
+    "name": "Golem",
+    "xp": 450,
+    "power": 600,
+    "attack": 40,
+    "defense": 50,
+    "habitat": "Rocks",
+    "danger": 50,
+    "agility": 10,
+    "fear": 10,
+    "levels": [
+      90,
+      180,
+      270,
+      360,
+      450
+    ],
+    "price": 4500000
+  },
+  "Gyarados": {
+    "url": "https://raw.githubusercontent.com/SliceWire/Discord-Uni/master/data/monsters/Gyarados.png",
+    "name": "Gyarados",
+    "xp": 900,
+    "power": 90,
+    "attack": 90,
+    "defense": 85,
+    "habitat": "Unknown",
+    "danger": 90,
+    "agility": 80,
+    "fear": 10,
+    "levels": [
+      180,
+      360,
+      540,
+      720,
+      900
+    ],
+    "price": 9000000
+  },
+  "Haunter": {
+    "url": "https://raw.githubusercontent.com/SliceWire/Discord-Uni/master/data/monsters/Haunter.png",
+    "name": "Haunter",
+    "xp": 850,
+    "power": 90,
+    "attack": 70,
+    "defense": 80,
+    "habitat": "Unknown",
+    "danger": 80,
+    "agility": 90,
+    "fear": 10,
+    "levels": [
+      170,
+      340,
+      510,
+      680,
+      850
+    ],
+    "price": 8500000
+  },
+  "Kabutops": {
+    "url": "https://raw.githubusercontent.com/SliceWire/Discord-Uni/master/data/monsters/Kabutops.png",
+    "name": "Kabutops",
+    "xp": 450,
+    "power": 300,
+    "attack": 60,
+    "defense": 35,
+    "habitat": "Mines",
+    "danger": 65,
+    "agility": 45,
+    "fear": 15,
+    "levels": [
+      90,
+      180,
+      270,
+      360,
+      450
+    ],
+    "price": 4500000
+  },
+  "Kadabra": {
+    "url": "https://raw.githubusercontent.com/SliceWire/Discord-Uni/master/data/monsters/Kadabra.png",
+    "name": "Kadabra",
+    "xp": 350,
+    "power": 40,
+    "attack": 40,
+    "defense": 20,
+    "habitat": "Trees",
+    "danger": 30,
+    "agility": 50,
+    "fear": 10,
+    "levels": [
+      70,
+      140,
+      210,
+      280,
+      350
+    ],
+    "price": 3500000
+  },
+  "Kangaskhan": {
+    "url": "https://raw.githubusercontent.com/SliceWire/Discord-Uni/master/data/monsters/Kangaskhan.png",
+    "name": "Kangaskhan",
+    "xp": 850,
+    "power": 95,
+    "attack": 80,
+    "defense": 80,
+    "habitat": "Caves",
+    "danger": 85,
+    "agility": 25,
+    "fear": 10,
+    "levels": [
+      170,
+      340,
+      510,
+      680,
+      850
+    ],
+    "price": 8500000
+  },
+  "Koffing": {
+    "url": "https://raw.githubusercontent.com/SliceWire/Discord-Uni/master/data/monsters/Koffing.png",
+    "name": "Koffing",
+    "xp": 250,
+    "power": 10,
+    "attack": 20,
+    "defense": 10,
+    "habitat": "Unknown",
+    "danger": 25,
+    "agility": 80,
+    "fear": 15,
+    "levels": [
+      50,
+      100,
+      150,
+      200,
+      250
+    ],
+    "price": 2500000
+  },
+  "Marowak": {
+    "url": "https://raw.githubusercontent.com/SliceWire/Discord-Uni/master/data/monsters/Marowak.png",
+    "name": "Marowak",
+    "xp": 950,
+    "power": 90,
+    "attack": 95,
+    "defense": 80,
+    "habitat": "Unknown",
+    "danger": 90,
+    "agility": 85,
+    "fear": 15,
+    "levels": [
+      190,
+      380,
+      570,
+      760,
+      950
+    ],
+    "price": 9500000
+  },
+  "Onix": {
+    "url": "https://raw.githubusercontent.com/SliceWire/Discord-Uni/master/data/monsters/Onix.png",
+    "name": "Onix",
+    "xp": 900,
+    "power": 95,
+    "attack": 85,
+    "defense": 100,
+    "habitat": "Mines",
+    "danger": 95,
+    "agility": 45,
+    "fear": 15,
+    "levels": [
+      180,
+      360,
+      540,
+      720,
+      900
+    ],
+    "price": 9000000
+  },
+  "Pikachu": {
+    "url": "https://raw.githubusercontent.com/SliceWire/Discord-Uni/master/data/monsters/Pikachu.png",
+    "name": "Pikachu",
+    "xp": 750,
+    "power": 70,
+    "attack": 95,
+    "defense": 65,
+    "habitat": "Unknown",
+    "danger": 80,
+    "agility": 95,
+    "fear": 10,
+    "levels": [
+      150,
+      300,
+      450,
+      600,
+      750
+    ],
+    "price": 7500000
+  },
+  "Raichu": {
+    "url": "https://raw.githubusercontent.com/SliceWire/Discord-Uni/master/data/monsters/Raichu.png",
+    "name": "Raichu",
+    "xp": 700,
+    "power": 65,
+    "attack": 95,
+    "defense": 45,
+    "habitat": "Unknown",
+    "danger": 80,
+    "agility": 90,
+    "fear": 15,
+    "levels": [
+      140,
+      280,
+      420,
+      560,
+      700
+    ],
+    "price": 7000000
+  },
+  "Rhyhorn": {
+    "url": "https://raw.githubusercontent.com/SliceWire/Discord-Uni/master/data/monsters/Rhyhorn.png",
+    "name": "Rhyhorn",
+    "xp": 900,
+    "power": 100,
+    "attack": 65,
+    "defense": 100,
+    "habitat": "Unknown",
+    "danger": 45,
+    "agility": 25,
+    "fear": 10,
+    "levels": [
+      180,
+      360,
+      540,
+      720,
+      900
+    ],
+    "price": 9000000
+  }
+}

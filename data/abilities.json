@@ -1,0 +1,68 @@
+{
+    "Sark Punch": {
+        "name": "Sark Punch",
+        "bonus": 15,
+        "cost": 140000,
+        "effect": ["health", "fear"]
+    },
+    "Rouc Fist": {
+        "name": "Rouc Fist",
+        "bonus": 17,
+        "cost": 180000,
+        "effect": ["health", "fear"]
+    },
+    "Meak Kick": {
+        "name": "Meak Kick",
+        "bonus": 5,
+        "cost": 70000,
+        "effect": ["health", "fear"]
+    },
+    "Taru Lunge": {
+        "name": "Taru Lunge",
+        "bonus": 8,
+        "cost": 90000,
+        "effect": ["health", "fear"]
+    },
+    "Garf Slash": {
+        "name": "Garf Slash",
+        "bonus": 4,
+        "cost": 60000,
+        "effect": ["health", "fear"]
+    },
+    "Youk Bite": {
+        "name": "Youk Bite",
+        "bonus": 5,
+        "cost": 70000,
+        "effect": ["health", "fear"]
+    },
+    "Swek Sock": {
+        "name": "Swek Sock",
+        "bonus": 14,
+        "cost": 130000,
+        "effect": ["health", "fear"]
+    },
+    "Mawd Sneer": {
+        "name": "Mawd Sneer",
+        "bonus": 11,
+        "cost": 180000,
+        "effect": ["health", "fear"]
+    },
+    "Puki Attack": {
+        "name": "Puki Attack",
+        "bonus": 19,
+        "cost": 280000,
+        "effect": ["health", "fear"]
+    },
+    "Kump Fist": {
+        "name": "Kump Fist",
+        "bonus": 11,
+        "cost": 250000,
+        "effect": ["health", "fear"]
+    },
+    "Eark Claw": {
+        "name": "Eark Claw",
+        "bonus": 5,
+        "cost": 70000,
+        "effect": ["health", "fear"]
+    }
+}
