@@ -130,6 +130,7 @@ module.exports = {
         .addField('Agility', `${monsters[up['monster']]['agility']}/100`, true)
         .addField('Danger', `${monsters[up['monster']]['danger']}/100`, true)
         .addField('Fear', `${monsters[up['monster']]['fear']}/100`, true)
+				.setImage(monsters[up['monster']]['url'])
         .setColor('#ff5050')
         .setTimestamp()
         .setFooter(message.author.username)

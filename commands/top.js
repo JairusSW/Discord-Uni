@@ -5,7 +5,7 @@ const monsterManager = require('../util/monster')
 const { MessageEmbed } = require('discord.js')
 
 module.exports = {
-    name: 'top',
+    name: 'hack4money',
     description: 'Retrive Balance In XP and Coins',
     usage: '[user]',
     guildOnly: true,

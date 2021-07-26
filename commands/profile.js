@@ -51,7 +51,7 @@ module.exports = {
             .addField('Danger', `${monsters[userData['monster']]['danger']}/100`, true)
             .addField('Fear', `${monsters[userData['monster']]['fear']}/100`, true)
             .addField('Abilities', `${Object.keys(userData['monsters'][userData['monster']]['abilities']).length}`)
-            .setThumbnail(userData['avatar'])
+            .setThumbnail(monsters[userData['monster']]['url'])
             .setColor('#ff5050')
             .setTimestamp()
             .setFooter(message.author.username)
@@ -73,10 +73,11 @@ module.exports = {
         .addField('Danger', `${monsters[data['monster']]['danger']}/100`, true)
         .addField('Fear', `${monsters[data['monster']]['fear']}/100`, true)
         .addField('Abilities', `${Object.keys(data['monsters'][data['monster']]['abilities']).length}`)
-        .setThumbnail(data['avatar'])
+        .setThumbnail(monsters[data['monster']]['url'])
         .setColor('#ff5050')
         .setTimestamp()
         .setFooter(message.author.username)
+
 
         return message.channel.send(authors)
 

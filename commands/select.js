@@ -74,7 +74,7 @@ module.exports = {
                 .addField('Abilities', `${Object.keys(data['monsters'][data['monster']]['abilities']).length}`)
                 .addField('XP', `${await formatNumber(data['xp'])}xp`)
                 .addField('Coins', `${await formatNumber(data['coins'])}c`)
-                .setImage(data['avatar'])
+                .setImage(monsters[data['monster']['url']])
                 .setColor('#ff5050')
                 .setTimestamp()
                 .setFooter(message.author.username)
