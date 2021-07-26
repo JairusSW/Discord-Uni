@@ -21,11 +21,11 @@ module.exports = {
         if (args[0] == null) {
 
             const noItem = new MessageEmbed()
-            .setTitle(`No Item/ability/Monster Provided`)
-            .setColor('#ff5050')
-            .setTimestamp()
-            .setFooter(message.author.username)
-    
+                .setTitle(`No Item/ability/Monster Provided`)
+                .setColor('#ff5050')
+                .setTimestamp()
+                .setFooter(message.author.username)
+
             message.channel.send(noItem)
 
             return
@@ -39,7 +39,7 @@ module.exports = {
         await monsterData.ensureUser(`${message.author.id}`)
 
         const monsterList = []
-        
+
         const coinList = []
 
         const abilityList = []
@@ -75,15 +75,15 @@ module.exports = {
         } else if (abilityList.includes(args.join(' ').trim().toLowerCase()) !== null) {
 
             type = 'ability'
-            
+
         } else {
 
             const notMonster = new MessageEmbed()
-            .setTitle(`Invalid Item/Ability/Monster`)
-            .setColor('#ff5050')
-            .setTimestamp()
-            .setFooter(message.author.username)
-    
+                .setTitle(`Invalid Item/Ability/Monster`)
+                .setColor('#ff5050')
+                .setTimestamp()
+                .setFooter(message.author.username)
+
             message.channel.send(notMonster)
 
             return
@@ -101,21 +101,21 @@ module.exports = {
             const data = await monsterData.ensureUser(`${message.author.id}`)
 
             const bought = new MessageEmbed()
-            .setTitle(`Bought ${coin}c`)
-            .addField('Name', data['monster'])
-            .addField('Power', `${data['monsters'][data['monster']]['xp']}/${monsters[data['monster']]['xp']}`)
-            .addField('Habitat', `${monsters[data['monster']]['habitat']}`)
-            .addField('Attack', `${monsters[data['monster']]['attack']}/100`)
-            .addField('Defense', `${monsters[data['monster']]['defense']}/100`)
-            .addField('Agility', `${monsters[data['monster']]['agility']}/100`)
-            .addField('Danger', `${monsters[data['monster']]['danger']}/100`)
-            .addField('Fear', `${monsters[data['monster']]['fear']}/100`)
-            .addField('Abilities', `${Object.keys(data['monsters'][data['monster']]['abilities']).length}`)
-            .addField('XP', `${await formatNumber(data['xp'])}xp`)
-            .addField('Coins', `${await formatNumber(data['coins'])}c`)
-            .setColor('#ff5050')
-            .setTimestamp()
-            .setFooter(message.author.username)
+                .setTitle(`Bought ${coin}c`)
+                .addField('Name', data['monster'])
+                .addField('Power', `${data['monsters'][data['monster']]['xp']}/${monsters[data['monster']]['xp']}`)
+                .addField('Habitat', `${monsters[data['monster']]['habitat']}`)
+                .addField('Attack', `${monsters[data['monster']]['attack']}/100`)
+                .addField('Defense', `${monsters[data['monster']]['defense']}/100`)
+                .addField('Agility', `${monsters[data['monster']]['agility']}/100`)
+                .addField('Danger', `${monsters[data['monster']]['danger']}/100`)
+                .addField('Fear', `${monsters[data['monster']]['fear']}/100`)
+                .addField('Abilities', `${Object.keys(data['monsters'][data['monster']]['abilities']).length}`)
+                .addField('XP', `${await formatNumber(data['xp'])}xp`)
+                .addField('Coins', `${await formatNumber(data['coins'])}c`)
+                .setColor('#ff5050')
+                .setTimestamp()
+                .setFooter(message.author.username)
 
             message.channel.send(bought)
 
@@ -128,15 +128,15 @@ module.exports = {
             let array1 = args[0].toLowerCase().trim().split('')
 
             array1[0] = array1[0].toUpperCase()
-            
+
             array1 = array1.join('')
-            
+
             let array2 = args[1].toLowerCase().trim().split('')
 
             array2[0] = array2[0].toUpperCase()
-            
+
             array2 = array2.join('')
-            
+
             const item = `${array1} ${array2}`
 
             const Data = await monsterData.ensureUser(`${message.author.id}`)
@@ -144,11 +144,11 @@ module.exports = {
             if (Data['coins'] <= abilities[item]['cost']) {
 
                 const own = new MessageEmbed()
-                .setTitle(`Not Enough Coins`)
-                .setColor('#ff5050')
-                .setTimestamp()
-                .setFooter(message.author.username)
-        
+                    .setTitle(`Not Enough Coins`)
+                    .setColor('#ff5050')
+                    .setTimestamp()
+                    .setFooter(message.author.username)
+
                 message.channel.send(own)
 
                 return
@@ -158,11 +158,11 @@ module.exports = {
             if (!(Data['monsters'][Data['monster']]['abilities'][item] == null)) {
 
                 const own = new MessageEmbed()
-                .setTitle(`Already Own ${item}`)
-                .setColor('#ff5050')
-                .setTimestamp()
-                .setFooter(message.author.username)
-        
+                    .setTitle(`Already Own ${item}`)
+                    .setColor('#ff5050')
+                    .setTimestamp()
+                    .setFooter(message.author.username)
+
                 message.channel.send(own)
 
                 return
@@ -176,21 +176,21 @@ module.exports = {
             const data = await monsterData.ensureUser(`${message.author.id}`)
 
             const bought = new MessageEmbed()
-            .setTitle(`Bought ${item}`)
-            .addField('Name', data['monster'])
-            .addField('Power', `${data['monsters'][data['monster']]['xp']}/${monsters[data['monster']]['xp']}`)
-            .addField('Habitat', `${monsters[data['monster']]['habitat']}`)
-            .addField('Attack', `${monsters[data['monster']]['attack']}/100`)
-            .addField('Defense', `${monsters[data['monster']]['defense']}/100`)
-            .addField('Agility', `${monsters[data['monster']]['agility']}/100`)
-            .addField('Danger', `${monsters[data['monster']]['danger']}/100`)
-            .addField('Fear', `${monsters[data['monster']]['fear']}/100`)
-            .addField('Abilities', `${Object.keys(data['monsters'][data['monster']]['abilities']).length}`)
-            .addField('XP', `${await formatNumber(data['xp'])}xp`)
-            .addField('Coins', `${await formatNumber(data['coins'])}c`)
-            .setColor('#ff5050')
-            .setTimestamp()
-            .setFooter(message.author.username)
+                .setTitle(`Bought ${item}`)
+                .addField('Name', data['monster'])
+                .addField('Power', `${data['monsters'][data['monster']]['xp']}/${monsters[data['monster']]['xp']}`)
+                .addField('Habitat', `${monsters[data['monster']]['habitat']}`)
+                .addField('Attack', `${monsters[data['monster']]['attack']}/100`)
+                .addField('Defense', `${monsters[data['monster']]['defense']}/100`)
+                .addField('Agility', `${monsters[data['monster']]['agility']}/100`)
+                .addField('Danger', `${monsters[data['monster']]['danger']}/100`)
+                .addField('Fear', `${monsters[data['monster']]['fear']}/100`)
+                .addField('Abilities', `${Object.keys(data['monsters'][data['monster']]['abilities']).length}`)
+                .addField('XP', `${await formatNumber(data['xp'])}xp`)
+                .addField('Coins', `${await formatNumber(data['coins'])}c`)
+                .setColor('#ff5050')
+                .setTimestamp()
+                .setFooter(message.author.username)
 
             message.channel.send(bought)
 
@@ -201,19 +201,19 @@ module.exports = {
             let array = args[0].toLowerCase().trim().split('')
 
             array[0] = array[0].toUpperCase()
-            
+
             array = array.join('')
-            
+
             const monster = array
 
             if (monsters[monster] == null) {
 
                 const notMonster = new MessageEmbed()
-                .setTitle(`Invalid Item/Monster`)
-                .setColor('#ff5050')
-                .setTimestamp()
-                .setFooter(message.author.username)
-        
+                    .setTitle(`Invalid Item/Monster`)
+                    .setColor('#ff5050')
+                    .setTimestamp()
+                    .setFooter(message.author.username)
+
                 message.channel.send(notMonster)
 
                 return
@@ -223,11 +223,11 @@ module.exports = {
             if (await monsterData.getXP(`${message.author.id}`) <= monsters[monster]['price']) {
 
                 const notEnough = new MessageEmbed()
-                .setTitle(`Not Enough XP`)
-                .setColor('#ff5050')
-                .setTimestamp()
-                .setFooter(message.author.username)
-        
+                    .setTitle(`Not Enough XP`)
+                    .setColor('#ff5050')
+                    .setTimestamp()
+                    .setFooter(message.author.username)
+
                 message.channel.send(notEnough)
 
                 return
@@ -239,15 +239,15 @@ module.exports = {
             if (userMonsters[monster]) {
 
                 const alreadyBought = new MessageEmbed()
-                .setTitle(`Already Own ${monster}`)
-                .setColor('#ff5050')
-                .setTimestamp()
-                .setFooter(message.author.username)
-        
+                    .setTitle(`Already Own ${monster}`)
+                    .setColor('#ff5050')
+                    .setTimestamp()
+                    .setFooter(message.author.username)
+
                 message.channel.send(alreadyBought)
 
                 return
-        
+
             }
 
             await monsterData.addMonster(`${message.author.id}`, monster, 1)
@@ -255,22 +255,22 @@ module.exports = {
             const data = await monsterData.ensureUser(`${message.author.id}`)
 
             const bought = new MessageEmbed()
-            .setTitle(`Bought ${monster}`)
-            .addField('Name', data['monster'])
-            .addField('Power', `${data['monsters'][data['monster']]['xp']}/${monsters[data['monster']]['xp']}`)
-            .addField('Habitat', `${monsters[data['monster']]['habitat']}`)
-            .addField('Attack', `${monsters[data['monster']]['attack']}/100`)
-            .addField('Defense', `${monsters[data['monster']]['defense']}/100`)
-            .addField('Agility', `${monsters[data['monster']]['agility']}/100`)
-            .addField('Danger', `${monsters[data['monster']]['danger']}/100`)
-            .addField('Abilities', `${Object.keys(data['monsters'][data['monster']]['abilities']).length}`)
-            .addField('Fear', `${monsters[data['monster']]['fear']}/100`)
-            .addField('XP', `${await formatNumber(data['xp'])}xp`)
-            .addField('Coins', `${await formatNumber(data['coins'])}c`)
-						.setImage(monsters[data['monster']]['url'])
-            .setColor('#ff5050')
-            .setTimestamp()
-            .setFooter(message.author.username)
+                .setTitle(`Bought ${monster}`)
+                .addField('Name', data['monster'])
+                .addField('Power', `${data['monsters'][data['monster']]['xp']}/${monsters[data['monster']]['xp']}`)
+                .addField('Habitat', `${monsters[data['monster']]['habitat']}`)
+                .addField('Attack', `${monsters[data['monster']]['attack']}/100`)
+                .addField('Defense', `${monsters[data['monster']]['defense']}/100`)
+                .addField('Agility', `${monsters[data['monster']]['agility']}/100`)
+                .addField('Danger', `${monsters[data['monster']]['danger']}/100`)
+                .addField('Abilities', `${Object.keys(data['monsters'][data['monster']]['abilities']).length}`)
+                .addField('Fear', `${monsters[data['monster']]['fear']}/100`)
+                .addField('XP', `${await formatNumber(data['xp'])}xp`)
+                .addField('Coins', `${await formatNumber(data['coins'])}c`)
+                .setImage(data['avatar'])
+                .setColor('#ff5050')
+                .setTimestamp()
+                .setFooter(message.author.username)
 
             message.channel.send(bought)
 

@@ -53,7 +53,7 @@ class Leveling {
         user['avatar'] = monsters[name]['url']
     
         user['monsters'][name] = {
-            level: level,
+            level: level | 1,
             xp: monsters[name]['levels'][level - 1],
             win: ((monsters[name]['levels'][level - 1] * (level)) | 0) * 10,
             lose: ((monsters[name]['levels'][level - 1] * (level)) | 0) * 10,
