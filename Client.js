@@ -2,12 +2,18 @@ const { Client, Collection } = require('discord.js')
 
 const Air5 = require('air5')
 
-const database = new Air5('Muzuk', {
-	provider: 'LevelDB'
+const ReziDB = require('rezidb')
+
+const database = new ReziDB({
+	name: 'Muzuk',
+	path: './data',
+	cluster: true
 })
 
-const leveling = new Air5('Levels', {
-	provider: 'LevelDB'
+const leveling = new ReziDB({
+	name: 'Levels',
+	path: './data',
+	cluster: true
 })
 
 class MuzukClient extends Client {

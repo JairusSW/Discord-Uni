@@ -19,8 +19,8 @@ class Leveling {
         if (!await this.db.has(id)) {
     
             let user = {
-                xp: 500,
-                coins: 250,
+                xp: 5000,
+                coins: 10000,
                 level: 1,
                 health: 100,
                 items: [],

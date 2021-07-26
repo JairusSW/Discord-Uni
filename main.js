@@ -16,19 +16,36 @@ const songLength = require('./util/songLength')
 
 const needle = require('needle')
 
-const { Collection, MessageEmbed, MessageAttachment } = require('discord.js')
+const { Collection, MessageEmbed, MessageAttachment, Intents } = require('discord.js')
 
 const { promisify } = require('util')
 
-const client = new MusicClient()
+const intents = new Intents([
+	Intents.NON_PRIVILEGED,
+	"GUILD_MEMBERS"
+])
+
+const client = new MusicClient({ ws: intents })
+
+const eventFiles = readdirSync("./events")
+	.filter((file) => file.endsWith(".js"));
+
+for (const file of eventFiles) {
+	const event = require(`./events/${file}`);
+	if (event.once) {
+		client.once(event.name, (...args) => event.execute(...args), client);
+	} else {
+		client.on(event.name, (...args) => event.execute(...args, client));
+	}
+}
 
 const config = {
-    prefix: process.env.prefix,
-    token: process.env.token,
-    invite: process.env.invite,
-    id: process.env.id,
-    youtube: new Map(),
-    fights: new Map()
+	prefix: process.env.prefix,
+	token: process.env.token,
+	invite: process.env.invite,
+	id: process.env.id,
+	youtube: new Map(),
+	fights: new Map()
 }
 
 client.config = config
@@ -44,15 +61,15 @@ for (const file of commandFiles) {
 }
 
 client.on('messageReactionAdd', async (reaction, user) => {
-					
+
 	if (reaction.partial) {
-		
+
 		try {
 
 			await reaction.fetch()
 
 		} catch (err) {
-			
+
 		}
 	}
 
@@ -73,7 +90,7 @@ client.on('messageReactionAdd', async (reaction, user) => {
 				if (reaction.emoji.name === '▶') {
 
 					if (userQueue.playing === false) {
-						
+
 						userQueue.connection.dispatcher.resume()
 
 						userQueue.playing = true
@@ -83,15 +100,15 @@ client.on('messageReactionAdd', async (reaction, user) => {
 					song = userQueue.songs[userQueue.location]
 
 					controlPanelEdit = new MessageEmbed()
-					.setTitle(`Song Dashboard`)
-					.addField(`Pause`, `${userQueue.playing ? 'Off' : 'On'}`)
-					.addField(`Loop`, `${userQueue.loop ? 'On' : 'Off'}`)
-					.addField(`Shuffle`, `${userQueue.shuffle ? 'On' : 'Off'}`)
-					.addField(`Volume`, `${userQueue.volume * 10}`)
-					.addField(`Position `, `[${songLength((Date.now() - userQueue.current) / 1000)}/${songLength(song.length)}]`)
-					.setThumbnail(`${song.thumbnail}`)
-					.setColor('#ff5050')
-					.setFooter(`----------------------------------------------------------------------------------------------`)
+						.setTitle(`Song Dashboard`)
+						.addField(`Pause`, `${userQueue.playing ? 'Off' : 'On'}`)
+						.addField(`Loop`, `${userQueue.loop ? 'On' : 'Off'}`)
+						.addField(`Shuffle`, `${userQueue.shuffle ? 'On' : 'Off'}`)
+						.addField(`Volume`, `${userQueue.volume * 10}`)
+						.addField(`Position `, `[${songLength((Date.now() - userQueue.current) / 1000)}/${songLength(song.length)}]`)
+						.setThumbnail(`${song.thumbnail}`)
+						.setColor('#ff5050')
+						.setFooter(`----------------------------------------------------------------------------------------------`)
 
 					reaction.message.edit(controlPanelEdit)
 
@@ -99,8 +116,8 @@ client.on('messageReactionAdd', async (reaction, user) => {
 
 				if (reaction.emoji.name === '⏸') {
 
-					if (userQueue.playing === true)  {
-						
+					if (userQueue.playing === true) {
+
 						userQueue.connection.dispatcher.pause()
 
 						userQueue.playing = false
@@ -110,15 +127,15 @@ client.on('messageReactionAdd', async (reaction, user) => {
 					song = userQueue.songs[userQueue.location]
 
 					controlPanelEdit = new MessageEmbed()
-					.setTitle(`Song Dashboard`)
-					.addField(`Pause`, `${userQueue.playing ? 'Off' : 'On'}`)
-					.addField(`Loop`, `${userQueue.loop ? 'On' : 'Off'}`)
-					.addField(`Shuffle`, `${userQueue.shuffle ? 'On' : 'Off'}`)
-					.addField(`Volume`, `${userQueue.volume * 10}`)
-          			.addField(`Position `, `[${songLength((Date.now() - userQueue.current) / 1000)}/${songLength(song.length)}]`)
-					.setThumbnail(`${song.thumbnail}`)
-					.setColor('#ff5050')
-					.setFooter(`----------------------------------------------------------------------------------------------`)
+						.setTitle(`Song Dashboard`)
+						.addField(`Pause`, `${userQueue.playing ? 'Off' : 'On'}`)
+						.addField(`Loop`, `${userQueue.loop ? 'On' : 'Off'}`)
+						.addField(`Shuffle`, `${userQueue.shuffle ? 'On' : 'Off'}`)
+						.addField(`Volume`, `${userQueue.volume * 10}`)
+						.addField(`Position `, `[${songLength((Date.now() - userQueue.current) / 1000)}/${songLength(song.length)}]`)
+						.setThumbnail(`${song.thumbnail}`)
+						.setColor('#ff5050')
+						.setFooter(`----------------------------------------------------------------------------------------------`)
 
 
 					reaction.message.edit(controlPanelEdit)
@@ -132,15 +149,15 @@ client.on('messageReactionAdd', async (reaction, user) => {
 					song = userQueue.songs[userQueue.location]
 
 					controlPanelEdit = new MessageEmbed()
-					.setTitle(`Song Dashboard`)
-					.addField(`Pause`, `${userQueue.playing ? 'Off' : 'On'}`)
-					.addField(`Loop`, `${userQueue.loop ? 'On' : 'Off'}`)
-					.addField(`Shuffle`, `${userQueue.shuffle ? 'On' : 'Off'}`)
-					.addField(`Volume`, `${userQueue.volume * 10}`)
-          			.addField(`Position `, `[${songLength((Date.now() - userQueue.current) / 1000)}/${songLength(song.length)}]`)
-					.setThumbnail(`${song.thumbnail}`)
-					.setColor('#ff5050')
-					.setFooter(`----------------------------------------------------------------------------------------------`)
+						.setTitle(`Song Dashboard`)
+						.addField(`Pause`, `${userQueue.playing ? 'Off' : 'On'}`)
+						.addField(`Loop`, `${userQueue.loop ? 'On' : 'Off'}`)
+						.addField(`Shuffle`, `${userQueue.shuffle ? 'On' : 'Off'}`)
+						.addField(`Volume`, `${userQueue.volume * 10}`)
+						.addField(`Position `, `[${songLength((Date.now() - userQueue.current) / 1000)}/${songLength(song.length)}]`)
+						.setThumbnail(`${song.thumbnail}`)
+						.setColor('#ff5050')
+						.setFooter(`----------------------------------------------------------------------------------------------`)
 
 					reaction.message.edit(controlPanelEdit)
 
@@ -155,15 +172,15 @@ client.on('messageReactionAdd', async (reaction, user) => {
 					song = userQueue.songs[userQueue.location]
 
 					controlPanelEdit = new MessageEmbed()
-					.setTitle(`Song Dashboard`)
-					.addField(`Pause`, `${userQueue.playing ? 'Off' : 'On'}`)
-					.addField(`Loop`, `${userQueue.loop ? 'On' : 'Off'}`)
-					.addField(`Shuffle`, `${userQueue.shuffle ? 'On' : 'Off'}`)
-					.addField(`Volume`, `${userQueue.volume * 10}`)
-          			.addField(`Position `, `[${songLength((Date.now() - userQueue.current) / 1000)}/${songLength(song.length)}]`)
-					.setThumbnail(`${song.thumbnail}`)
-					.setColor('#ff5050')
-					.setFooter(`----------------------------------------------------------------------------------------------`)
+						.setTitle(`Song Dashboard`)
+						.addField(`Pause`, `${userQueue.playing ? 'Off' : 'On'}`)
+						.addField(`Loop`, `${userQueue.loop ? 'On' : 'Off'}`)
+						.addField(`Shuffle`, `${userQueue.shuffle ? 'On' : 'Off'}`)
+						.addField(`Volume`, `${userQueue.volume * 10}`)
+						.addField(`Position `, `[${songLength((Date.now() - userQueue.current) / 1000)}/${songLength(song.length)}]`)
+						.setThumbnail(`${song.thumbnail}`)
+						.setColor('#ff5050')
+						.setFooter(`----------------------------------------------------------------------------------------------`)
 
 					reaction.message.edit(controlPanelEdit)
 
@@ -176,15 +193,15 @@ client.on('messageReactionAdd', async (reaction, user) => {
 					song = userQueue.songs[userQueue.location]
 
 					controlPanelEdit = new MessageEmbed()
-					.setTitle(`Song Dashboard`)
-					.addField(`Pause`, `${userQueue.playing ? 'Off' : 'On'}`)
-					.addField(`Loop`, `${userQueue.loop ? 'On' : 'Off'}`)
-					.addField(`Shuffle`, `${userQueue.shuffle ? 'On' : 'Off'}`)
-					.addField(`Volume`, `${userQueue.volume * 10}`)
-          			.addField(`Position `, `[${songLength((Date.now() - userQueue.current) / 1000)}/${songLength(song.length)}]`)
-					.setThumbnail(`${song.thumbnail}`)
-					.setColor('#ff5050')
-					.setFooter(`----------------------------------------------------------------------------------------------`)
+						.setTitle(`Song Dashboard`)
+						.addField(`Pause`, `${userQueue.playing ? 'Off' : 'On'}`)
+						.addField(`Loop`, `${userQueue.loop ? 'On' : 'Off'}`)
+						.addField(`Shuffle`, `${userQueue.shuffle ? 'On' : 'Off'}`)
+						.addField(`Volume`, `${userQueue.volume * 10}`)
+						.addField(`Position `, `[${songLength((Date.now() - userQueue.current) / 1000)}/${songLength(song.length)}]`)
+						.setThumbnail(`${song.thumbnail}`)
+						.setColor('#ff5050')
+						.setFooter(`----------------------------------------------------------------------------------------------`)
 
 					reaction.message.edit(controlPanelEdit)
 
@@ -197,15 +214,15 @@ client.on('messageReactionAdd', async (reaction, user) => {
 					song = userQueue.songs[userQueue.location]
 
 					controlPanelEdit = new MessageEmbed()
-					.setTitle(`Song Dashboard`)
-					.addField(`Pause`, `${userQueue.playing ? 'Off' : 'On'}`)
-					.addField(`Loop`, `${userQueue.loop ? 'On' : 'Off'}`)
-					.addField(`Shuffle`, `${userQueue.shuffle ? 'On' : 'Off'}`)
-					.addField(`Volume`, `${userQueue.volume * 10}`)
-          			.addField(`Position `, `[${songLength((Date.now() - userQueue.current) / 1000)}/${songLength(song.length)}]`)
-					.setThumbnail(`${song.thumbnail}`)
-					.setColor('#ff5050')
-					.setFooter(`----------------------------------------------------------------------------------------------`)
+						.setTitle(`Song Dashboard`)
+						.addField(`Pause`, `${userQueue.playing ? 'Off' : 'On'}`)
+						.addField(`Loop`, `${userQueue.loop ? 'On' : 'Off'}`)
+						.addField(`Shuffle`, `${userQueue.shuffle ? 'On' : 'Off'}`)
+						.addField(`Volume`, `${userQueue.volume * 10}`)
+						.addField(`Position `, `[${songLength((Date.now() - userQueue.current) / 1000)}/${songLength(song.length)}]`)
+						.setThumbnail(`${song.thumbnail}`)
+						.setColor('#ff5050')
+						.setFooter(`----------------------------------------------------------------------------------------------`)
 					reaction.message.edit(controlPanelEdit)
 
 				}
@@ -219,15 +236,15 @@ client.on('messageReactionAdd', async (reaction, user) => {
 					song = userQueue.songs[userQueue.location]
 
 					controlPanelEdit = new MessageEmbed()
-					.setTitle(`Song Dashboard`)
-					.addField(`Pause`, `${userQueue.playing ? 'Off' : 'On'}`)
-					.addField(`Loop`, `${userQueue.loop ? 'On' : 'Off'}`)
-					.addField(`Shuffle`, `${userQueue.shuffle ? 'On' : 'Off'}`)
-					.addField(`Volume`, `${userQueue.volume * 10}`)
-          			.addField(`Position `, `[${songLength((Date.now() - userQueue.current) / 1000)}/${songLength(song.length)}]`)
-					.setThumbnail(`${song.thumbnail}`)
-					.setColor('#ff5050')
-					.setFooter(`----------------------------------------------------------------------------------------------`)
+						.setTitle(`Song Dashboard`)
+						.addField(`Pause`, `${userQueue.playing ? 'Off' : 'On'}`)
+						.addField(`Loop`, `${userQueue.loop ? 'On' : 'Off'}`)
+						.addField(`Shuffle`, `${userQueue.shuffle ? 'On' : 'Off'}`)
+						.addField(`Volume`, `${userQueue.volume * 10}`)
+						.addField(`Position `, `[${songLength((Date.now() - userQueue.current) / 1000)}/${songLength(song.length)}]`)
+						.setThumbnail(`${song.thumbnail}`)
+						.setColor('#ff5050')
+						.setFooter(`----------------------------------------------------------------------------------------------`)
 
 					reaction.message.edit(controlPanelEdit)
 
@@ -242,15 +259,15 @@ client.on('messageReactionAdd', async (reaction, user) => {
 					song = userQueue.songs[userQueue.location]
 
 					controlPanelEdit = new MessageEmbed()
-					.setTitle(`Song Dashboard`)
-					.addField(`Pause`, `${userQueue.playing ? 'Off' : 'On'}`)
-					.addField(`Loop`, `${userQueue.loop ? 'On' : 'Off'}`)
-					.addField(`Shuffle`, `${userQueue.shuffle ? 'On' : 'Off'}`)
-					.addField(`Volume`, `${userQueue.volume * 10}`)
-          			.addField(`Position `, `[${songLength((Date.now() - userQueue.current) / 1000)}/${songLength(song.length)}]`)
-					.setThumbnail(`${song.thumbnail}`)
-					.setColor('#ff5050')
-					.setFooter(`----------------------------------------------------------------------------------------------`)
+						.setTitle(`Song Dashboard`)
+						.addField(`Pause`, `${userQueue.playing ? 'Off' : 'On'}`)
+						.addField(`Loop`, `${userQueue.loop ? 'On' : 'Off'}`)
+						.addField(`Shuffle`, `${userQueue.shuffle ? 'On' : 'Off'}`)
+						.addField(`Volume`, `${userQueue.volume * 10}`)
+						.addField(`Position `, `[${songLength((Date.now() - userQueue.current) / 1000)}/${songLength(song.length)}]`)
+						.setThumbnail(`${song.thumbnail}`)
+						.setColor('#ff5050')
+						.setFooter(`----------------------------------------------------------------------------------------------`)
 
 					reaction.message.edit(controlPanelEdit)
 
@@ -271,21 +288,21 @@ client.on('messageReactionAdd', async (reaction, user) => {
 						userQueue.mute = true
 
 						userQueue.connection.dispatcher.setVolumeLogarithmic(0 / 5)
-						
+
 					}
 
 					song = userQueue.songs[userQueue.location]
 
 					controlPanelEdit = new MessageEmbed()
-					.setTitle(`Song Dashboard`)
-					.addField(`Pause`, `${userQueue.playing ? 'Off' : 'On'}`)
-					.addField(`Loop`, `${userQueue.loop ? 'On' : 'Off'}`)
-					.addField(`Shuffle`, `${userQueue.shuffle ? 'On' : 'Off'}`)
-					.addField(`Volume`, `${userQueue.volume * 10}`)
-          			.addField(`Position `, `[${songLength((Date.now() - userQueue.current) / 1000)}/${songLength(song.length)}]`)
-					.setThumbnail(`${song.thumbnail}`)
-					.setColor('#ff5050')
-					.setFooter(`----------------------------------------------------------------------------------------------`)
+						.setTitle(`Song Dashboard`)
+						.addField(`Pause`, `${userQueue.playing ? 'Off' : 'On'}`)
+						.addField(`Loop`, `${userQueue.loop ? 'On' : 'Off'}`)
+						.addField(`Shuffle`, `${userQueue.shuffle ? 'On' : 'Off'}`)
+						.addField(`Volume`, `${userQueue.volume * 10}`)
+						.addField(`Position `, `[${songLength((Date.now() - userQueue.current) / 1000)}/${songLength(song.length)}]`)
+						.setThumbnail(`${song.thumbnail}`)
+						.setColor('#ff5050')
+						.setFooter(`----------------------------------------------------------------------------------------------`)
 
 					reaction.message.edit(controlPanelEdit)
 
@@ -318,7 +335,7 @@ const escapeRegex = str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
 client.on('message', message => {
 
 	if (message.author.bot) return
-
+	
 	const prefixRegex = new RegExp(`^(<@!?${client.user.id}>|${escapeRegex(client.prefix)})\\s*`)
 
 	if (!prefixRegex.test(message.content)) return
@@ -335,17 +352,17 @@ client.on('message', message => {
 
 	const commandName = args.shift().toLowerCase()
 
-	const command = client.commands.get(commandName)|| client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
+	const command = client.commands.get(commandName) || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
 
 	if (!command) return
 
 	if (command.guildOnly && message.channel.type !== 'text') {
 
 		const serverOnly = new MessageEmbed()
-		.setTitle(`Please Move To A Server.`)
-		.setColor('#ff5050')
-		.setTimestamp()
-		.setFooter(message.author.username)
+			.setTitle(`Please Move To A Server.`)
+			.setColor('#ff5050')
+			.setTimestamp()
+			.setFooter(message.author.username)
 
 		message.channel.send(serverOnly)
 
@@ -356,10 +373,10 @@ client.on('message', message => {
 	if (command.args && !args.length) {
 
 		const noArgs = new MessageEmbed()
-		.setTitle(`Please Provide The Needed Input.`)
-		.setColor('#ff5050')
-		.setTimestamp()
-		.setFooter(message.author.username)
+			.setTitle(`Please Provide The Needed Input.`)
+			.setColor('#ff5050')
+			.setTimestamp()
+			.setFooter(message.author.username)
 
 		message.channel.send(noArgs)
 
@@ -388,10 +405,10 @@ client.on('message', message => {
 			const timeLeft = (expirationTime - now)
 
 			const slowDown = new MessageEmbed()
-			.setTitle(`Slow Down. ${ms(timeLeft | 0)} Left.`)
-			.setColor('#ff5050')
-			.setTimestamp()
-			.setFooter(message.author.username)
+				.setTitle(`Slow Down. ${ms(timeLeft | 0)} Left.`)
+				.setColor('#ff5050')
+				.setTimestamp()
+				.setFooter(message.author.username)
 
 			message.channel.send(slowDown)
 
@@ -412,10 +429,10 @@ client.on('message', message => {
 	} catch (err) {
 
 		const errorMessage = new MessageEmbed()
-		.setTitle(`Something Happened. Try Again.`)
-		.setColor('#ff5050')
-		.setTimestamp()
-		.setFooter(message.author.username)
+			.setTitle(`Something Happened. Try Again.`)
+			.setColor('#ff5050')
+			.setTimestamp()
+			.setFooter(message.author.username)
 
 		message.channel.send(errorMessage)
 
@@ -429,9 +446,9 @@ const http = require('http')
 
 const server = http.createServer((req, res) => {
 
-res.writeHead(200)
+	res.writeHead(200)
 
-res.end('ok')
+	res.end('ok')
 
 })
 

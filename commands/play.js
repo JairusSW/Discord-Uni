@@ -330,7 +330,7 @@ module.exports = {
 
 			}
 
-			queue.stream = await ytdlOpus(song.url, { quality: 'lowestaudio', filter: 'audioonly', highWaterMark: 1 << 25 })
+			queue.stream = await ytdlOpus(song.url, { quality: 'highestaudio', filter: 'audioonly', highWaterMark: 1 << 25 })
 
 			queue.current = Date.now()
 

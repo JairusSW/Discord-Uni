@@ -8,7 +8,7 @@ module.exports = {
     cooldown: 1,
     async execute(message, args) {
 
-        const balls = [
+        const answers = [
             'Yes, always.',
             'Possibly not.',
             'Who knows?',
@@ -40,7 +40,7 @@ module.exports = {
             'Who Cares?'
         ]
 
-        const ball = balls[(Math.random() * balls.length) | 0]
+        const ball = answers[(Math.random() * answers.length) | 0]
 
         const embed = new MessageEmbed()
         .setTitle(`${message.author.username}, ${ball}`)

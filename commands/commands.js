@@ -14,7 +14,8 @@ module.exports = {
 			.addField('2. ', 'Music')
 			.addField('3. ', 'Games')
 			.addField('4. ', 'Random')
-			.addField('5. ', 'Other')
+			.addField('5. ', 'Image')
+			.addField('6. ', 'Other')
 			.setColor('#ff5050')
 			.setTimestamp()
 			.setFooter(message.author.username)
@@ -123,6 +124,31 @@ module.exports = {
 				}
 
 				if (msg === '5') {
+
+					const embed = new MessageEmbed()
+						.setTitle(`Image Commands`)
+						.addField('Bed [user]', '"Monster under the bed" meme')
+						.addField('Facepalm [user]', 'Facepalm Image')
+						.addField('Slap [user]', 'Slap Someone')
+						.addField('Ad [user]', 'Turn Someone Into A Billboard')
+						.addField('Frame [user]', 'Weird Picture Frame Comic')
+						.addField('Bob-ross [user]', 'Get Bob Ross To Paint Someone')
+						.addField('Trash [user]', 'Throw someone in the trash')
+						.addField('Podium [user] [user]', 'Create A Podium (1st, 2nd, 3rd)')
+						.addField('RIP [user]', 'Make someone a funeral')
+						.addField('Spank [user]', 'Spank someone like a dad')
+						.addField('Wanted [user]', 'Dead or alive wanted poster')
+						.setColor('#ff5050')
+						.setTimestamp()
+						.setFooter(message.author.username)
+
+					message.channel.send(embed)
+
+					return
+
+				}
+
+				if (msg === '6') {
 
 					const embed = new MessageEmbed()
 						.setTitle(`Other Commands`)
