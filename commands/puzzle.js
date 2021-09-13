@@ -1,54 +1,33 @@
-const DIG = require('discord-image-generation')
-
+const ChessAPI = require('chess-web-api')
+const api = new ChessAPI()
 const { MessageEmbed, MessageAttachment } = require('discord.js')
 
 module.exports = {
-	name: 'hitler',
-	description: 'Create ~Worse Than Hitler~ Image',
+	name: 'puzzle',
+	description: 'Get chess.com daily puzzle',
 	cooldown: 1,
 	guildOnly: true,
 	async execute(message, args) {
-		
 		try {
-			
-						const user = await getUserFromMention(args[0], message)
-
-			if (user == null) {
-
-				const mention = new MessageEmbed()
-				.setTitle('Mention Someone.')
-				.setColor('#ff5050')
-				.setTimestamp()
-				.setFooter(message.author.username)
-
-				message.channel.send(mention)
-
-				return
-				
-			}
-
-			const image = await new DIG.Hitler().getImage(user.displayAvatarURL({ dynamic: false, format: 'png' }))
-
-			let attachment = new MessageAttachment(image, 'hitler.png')
-
-			message.channel.send(attachment)
-
+      const dailyPuzzle = await api.getDailyPuzzle()
+      const embed = new MessageEmbed()
+      .setTitle(`${dailyPuzzle['body']['title']}`)
+      .setDescription(`${dailyPuzzle['body']['url']}`)
+      .setColor('#ff5050')
+      .setTimestamp()
+      .setThumbnail(dailyPuzzle['body']['image'])
+      .setFooter(message.author.username)
+      message.channel.send(embed)
 		} catch (err) {
-
 			console.log(err)
-
 			const Unavaliable = new MessageEmbed()
 			.setTitle('Something Happened.')
 			.setColor('#ff5050')
 			.setTimestamp()
 			.setFooter(message.author.username)
-
 			message.channel.send(Unavaliable)
-
 		}
-	
 	}
-
 }
 
 function getUserFromMention(mention, message) {

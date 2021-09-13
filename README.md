@@ -26,7 +26,6 @@
 2. Edit .env
 3. Start
 4. Set up UptimeRobot
-
 #### Example .env
 
 ```

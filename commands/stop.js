@@ -15,7 +15,7 @@ module.exports = {
 		if (!channel) {
 						
 			const noChannel = new MessageEmbed()
-			.setTitle('Nothing To Stop.')
+			.setTitle('Stopped.')
 			.setColor('#ff5050')
 			.setTimestamp()
 			.setFooter(message.author.username)
@@ -31,7 +31,7 @@ module.exports = {
 		if (!userQueue) {
 			
 			const noStop = new MessageEmbed()
-			.setTitle('Nothing To Stop.')
+			.setTitle('Stopped.')
 			.setColor('#ff5050')
 			.setTimestamp()
 			.setFooter(message.author.username)

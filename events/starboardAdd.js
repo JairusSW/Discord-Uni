@@ -8,6 +8,8 @@ module.exports = {
 
     if (reaction.emoji.name !== "⭐") return;
 
+		console.log('Found a reaction!', reaction)
+
     //if (message.author.id === user.id) return;
 
     if (message.author.bot) return;

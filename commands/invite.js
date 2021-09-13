@@ -10,7 +10,7 @@ module.exports = {
 		try {
 
 			const Invite = new MessageEmbed()
-			.setTitle(`https://discord.com/oauth2/authorize?client_id=${message.client.user.id}&scope=bot&permissions=66113344`)
+			.setTitle(`https://discord.com/oauth2/authorize?client_id=${message.client.user.id}&scope=bot&permissions=6777331537`)
 			.setColor('#ff5050')
 			.setTimestamp()
 			.setFooter(message.author.username)

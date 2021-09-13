@@ -1,31 +1,17 @@
 const { Util } = require('discord.js')
-
 const { MessageEmbed } = require('discord.js')
-
 const ytdl = require('ytdl-core')
-
 const ytdlOpus = require('ytdl-core-discord')
-
 const songLength = require('../util/songLength')
-
 const formatViews = require('../util/formatViews')
-
 const shortenTitle = require('../util/shortenTitle')
-
 const isURL = require('is-url')
-
 const isYoutubeURL = require('../util/isYoutubeURL')
-
 const isCode = require('../util/isCode')
-
 const searchYT = require('../util/searchYT')
-
 const toSeconds = require('../util/toSeconds')
-
 const getPlaylistID = require('../util/getPlaylistID')
-
 const ytpl = require('ytpl')
-
 module.exports = {
 	name: 'play',
 	description: 'Play command.',
@@ -35,15 +21,10 @@ module.exports = {
 	guildOnly: true,
 	cooldown: 5,
 	async execute(message, args) {
-		
 		try {
-
 		const musicData = message.client.musicDatabase
-
 		const user = message.client.userDatabase
-
 		if (await user.has(message.author.id) === false) {
-
 			await user.set(message.author.id, {
 				username: message.author.username,
 				premium: false,
@@ -51,50 +32,36 @@ module.exports = {
 				playlists: [],
 				avatar: message.author.displayAvatarURL()
 			})
-
 		}
-		
 		const { channel } = message.member.voice
-
 		if (!channel) {
-
 			const not_voice_channel = new MessageEmbed()
 			.setTitle('Enter A Voice Channel.')
 			.setColor('#ff5050')
 			.setTimestamp()
 			.setFooter(message.author.username)
-
 			message.channel.send(not_voice_channel)
-
 			return
-
 		}
-
+		try {
+			await channel.setBitrate(98)
+		} catch {}
+		const userLimit = channel.userLimit
 		// Try To Force In To Channel
 		if (channel.full) {
-
 			try {
-
 				await channel.setUserLimit(channel.userLimit + 1)
-
 			} catch (err) {
-
 				console.log(err)
-
 				const full_channel = new MessageEmbed()
 				.setTitle('Channel Is Full. Select A Different Channel.')
 				.setColor('#ff5050')
 				.setTimestamp()
 				.setFooter(message.author.username)
-	
 				message.channel.send(full_channel)
-
 				channel.leave()
-
 				return
-
 			}
-
 		}
  
 		const permissions = channel.permissionsFor(message.client.user)
@@ -330,62 +297,38 @@ module.exports = {
 
 			}
 
-			queue.stream = await ytdlOpus(song.url, { quality: 'highestaudio', filter: 'audioonly', highWaterMark: 1 << 25 })
+			queue.stream = await ytdlOpus(song.url, { quality: 'highestaudio', filter: 'audioonly' })
 
 			queue.current = Date.now()
 
 			const dispatcher = queue.connection.play(queue.stream, { type: 'opus' })
-
 				dispatcher.on('finish', () => {
-
 					if (queue.stream.destroyed == null) {
-
 						queue.stream.destroy()
-
 						queue.stream = null
-
 						return
-
 					}
-
 					if (queue.loop === true) {
-
 						if (queue.location >= queue.songs.length - 1) queue.location = -1
-						
 						queue.location++
-
 					}
-
 					if (queue.shuffle === true) {
-
 						queue.location = (Math.random() * queue.songs.length) | 0
-
 					}
-
 					if (queue.shuffle === false && queue.loop === false) queue['location']++
-
 					if (queue.location >= queue.songs.length && queue.loop === false && queue.shuffle === false) {
-
 						const queueDone = new MessageEmbed()
 						.setTitle(`Finished With Queue.`)
 						.setColor('#ff5050')
 						.setTimestamp()
 						.setFooter(message.author.username)
-						
 						queue.textChannel.send(queueDone)
-
 						queue.voiceChannel.leave()
-		
 						message.client.queue.delete(message.author.id)
-		
 						return
-		
 					}
-
 					play(queue.songs[queue['location']])
-
 					const currentSong = queue.songs[queue['location']]
-
 					const nextPlaying = new MessageEmbed()
 					.setTitle(`${currentSong.shortTitle}`)
 					.setDescription(`Playing Now.`)
@@ -398,21 +341,13 @@ module.exports = {
 					.setColor('#ff5050')
 					.setTimestamp()
 					.setFooter(message.author.username)
-					
 					queue.textChannel.send(nextPlaying)
-
 					return
-
 				})
-
 			dispatcher.on('error', error => console.error(error))
-
 			dispatcher.setVolumeLogarithmic(queue.volume / 5)
-
 			if (queue.firstMessage === false) {
-
 				queue.firstMessage = true
-
 				const nowPlaying = new MessageEmbed()
 				.setTitle(`${song.shortTitle}`)
 				.setDescription(`Playing Now.`)
@@ -425,9 +360,7 @@ module.exports = {
 				.setColor('#ff5050')
 				.setTimestamp()
 				.setFooter(message.author.username)
-				
 				queue.textChannel.send(nowPlaying)
-
 				const controlPanel = new MessageEmbed()
 				.setTitle(`Song Dashboard`)
 				.addField(`Pause`, `${song.playing ? 'Off' : 'On'}`)
@@ -438,9 +371,7 @@ module.exports = {
 				.setThumbnail(`${song.thumbnail}`)
 				.setColor('#ff5050')
 				.setFooter(`----------------------------------------------------------------------------------------------`)
-
 				const control = await message.member.send(controlPanel)
-
 				Promise.all([
 					control.react('▶'),
 					control.react('⏸'),
@@ -452,54 +383,36 @@ module.exports = {
 					control.react('🔉'),
 					control.react('🔈')
 				])
-
 			}
-
 		}
-
 		try {
-
 			const connection = await channel.join()
-
 			connection.voice.setSelfDeaf(true)
-
 			queueConstruct.connection = connection
-
 			play(queueConstruct.songs[queueConstruct['location']])
-
 		} catch (err) {
-
 			console.log(err)
-
 			message.client.queue.delete(message.author.id)
-
 			await channel.leave()
-
 			const song_error = new MessageEmbed()
 			.setTitle('Could Not Play Song.')
 			.setColor('#ff5050')
 			.setTimestamp()
 			.setFooter(message.author.username)
-			
 			message.channel.send(song_error)
-			
 			return
-
 		}
-
 			} catch (err) {
-
 				console.log(err)
-
 				const Unavaliable = new MessageEmbed()
 				.setTitle('Something Happened.')
 				.setColor('#ff5050')
 				.setTimestamp()
 				.setFooter(message.author.username)
-
 				message.channel.send(Unavaliable)
-
 	}
-	
+	try {
+				await channel.setUserLimit(userLimit)
+			} catch {}
 	}
 }

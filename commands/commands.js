@@ -9,20 +9,21 @@ module.exports = {
 
 		const commands = new MessageEmbed()
 			.setTitle(`Commands`)
-			.setDescription('1-5')
+			.setDescription(`Usage: ${process.env.prefix}[command-here]\nSelect 1-5`)
 			.addField('1. ', 'Leveling')
 			.addField('2. ', 'Music')
 			.addField('3. ', 'Games')
 			.addField('4. ', 'Random')
 			.addField('5. ', 'Image')
-			.addField('6. ', 'Other')
+			.addField('6. ', 'Chess')
+			.addField('7. ', 'Chatbot')
 			.setColor('#ff5050')
 			.setTimestamp()
 			.setFooter(message.author.username)
 
 		message.channel.send(commands)
 
-		const filter = m => message.author.id === m.author.id;
+		const filter = m => message.author.id == m.author.id;
 
 		message.channel.awaitMessages(filter, { time: 5000, max: 1, errors: ['time'] })
 
@@ -42,6 +43,7 @@ module.exports = {
 						.addField('Daily', 'Get Daily Bonus')
 						.addField('Upgrade', 'Upgrade Current Monster')
 						.addField('Select', 'Switch Current Monster')
+						.addField('Coinflip [Amount]', 'Gamble your xp')
 						.setColor('#ff5050')
 						.setTimestamp()
 						.setFooter(message.author.username)
@@ -113,6 +115,13 @@ module.exports = {
 						.addField('Avatar [User]', 'Get User Avatar')
 						.addField('Cat-Fact', 'Get Random Cat Fact')
 						.addField('Momma', 'Random Yo Momma Joke')
+						.addField('Joke', 'Get A Joke')
+						.addField('Poll', 'Create a poll')
+						.addField('Advice', 'Get Life Advice')
+						.addField('Meme', 'Get Meme')
+						.addField('Insult [User]', 'Get Random Insult')
+						.addField('8ball [Question]', 'Answer Any Question')
+						.addField('Weather [Location/ZIP]', 'Get Current Weather Stats')
 						.setColor('#ff5050')
 						.setTimestamp()
 						.setFooter(message.author.username)
@@ -138,6 +147,16 @@ module.exports = {
 						.addField('RIP [user]', 'Make someone a funeral')
 						.addField('Spank [user]', 'Spank someone like a dad')
 						.addField('Wanted [user]', 'Dead or alive wanted poster')
+						.addField('Triggered [user]', 'Triggered gif')
+						.addField('Invert [user]', 'Invert a user\'s avatar')
+						.addField('Hitler [user]', 'Worse than hitler news report')
+						.addField('Jail [user]', 'Put someone in jail')
+						.addField('Junk [user]', 'Turn someone into trash')
+						.addField('Karaba [user]', 'Make a karaba')
+						.addField('Kiss [user]', 'Kiss someone')
+						.addField('Putin [user]', 'Spy on putin')
+						.addField('Tatoo [user]', 'Ultimate Tatoo comic')
+						.addField('Thomas [user]', 'Turn someone into Thomas the Tank Engine')
 						.setColor('#ff5050')
 						.setTimestamp()
 						.setFooter(message.author.username)
@@ -151,14 +170,26 @@ module.exports = {
 				if (msg === '6') {
 
 					const embed = new MessageEmbed()
-						.setTitle(`Other Commands`)
-						.addField('Joke', 'Get A Joke')
-						.addField('Advice', 'Get Life Advice')
-						.addField('Meme', 'Get Meme')
-						.addField('Insult [User]', 'Get Random Insult')
-						.addField('8ball [Question]', 'Answer Any Question')
-						.addField('Weather [Location/ZIP]', 'Get Current Weather Stats')
+						.setTitle(`Chess Commands`)
 						.setColor('#ff5050')
+						.addField('puzzle', 'Get the chess.com daily puzzle')
+						.addField('rating', 'Get your chess.com rating')
+						.setTimestamp()
+						.setFooter(message.author.username)
+
+					message.channel.send(embed)
+
+					return
+
+				}
+
+				if (msg === '7') {
+
+					const embed = new MessageEmbed()
+						.setTitle(`Chatbot Commands`)
+						.setColor('#ff5050')
+						.addField('Cleverbot', 'Have a conversation with the bot')
+						.addField('Stop', 'Stop conversation')
 						.setTimestamp()
 						.setFooter(message.author.username)
 

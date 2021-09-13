@@ -3,32 +3,19 @@ const DIG = require('discord-image-generation')
 const { MessageEmbed, MessageAttachment } = require('discord.js')
 
 module.exports = {
-	name: 'spank',
-	description: 'Create Spanking Image',
+	name: 'bob-ross',
+	description: 'Create Bob Ross Image',
 	cooldown: 1,
 	guildOnly: true,
 	async execute(message, args) {
 		
 		try {
 			
-			const user = await getUserFromMention(args[0], message)
+			const user = await getUserFromMention(args[0], message) || message.author
 
-			if (user == null) {
-				const mention = new MessageEmbed()
-				.setTitle('Mention Someone.')
-				.setColor('#ff5050')
-				.setTimestamp()
-				.setFooter(message.author.username)
+			const image = await new DIG.Karaba().getImage(user.displayAvatarURL({ dynamic: false, format: 'png' }))
 
-				message.channel.send(mention)
-
-				return
-				
-			}
-
-			const image = await new DIG.Spank().getImage(message.author.displayAvatarURL({ dynamic: false, format: 'png' }), user.displayAvatarURL({ dynamic: false, format: 'png' }))
-
-			let attachment = new MessageAttachment(image, 'spank.png')
+			let attachment = new MessageAttachment(image, 'karaba.png')
 
 			message.channel.send(attachment)
 
