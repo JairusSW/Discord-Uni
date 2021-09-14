@@ -3,7 +3,7 @@ const { MessageEmbed } = require('discord.js')
 const cleverbot = require("cleverbot-free");
 
 module.exports = {
-    name: 'cleverbot',
+    name: 'chat',
     description: 'Start a cleverbot instance',
 		guildOnly: false,
     cooldown: (60 * 60) * 24,

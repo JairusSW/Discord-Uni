@@ -7,8 +7,7 @@
 	"license": "MIT",
 	"private": false,
 	"scripts": {
-		"start": "node .",
-		"shard": "node shard"
+		"start": "node main.js"
 	},
 	"dependencies": {
 		"@discordjs/opus": "^0.4.0",

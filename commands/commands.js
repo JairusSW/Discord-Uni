@@ -188,7 +188,7 @@ module.exports = {
 					const embed = new MessageEmbed()
 						.setTitle(`Chatbot Commands`)
 						.setColor('#ff5050')
-						.addField('Cleverbot', 'Have a conversation with the bot')
+						.addField('Chat', 'Have a conversation with the bot')
 						.addField('Stop', 'Stop conversation')
 						.setTimestamp()
 						.setFooter(message.author.username)

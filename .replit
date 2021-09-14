@@ -1,2 +1,2 @@
 language = "nodejs"
-run = "npm run shard"
+run = "npm run start"

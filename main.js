@@ -396,7 +396,7 @@ client.on('message', message => {
 
 	const cooldownAmount = (command.cooldown || 3) * 1000
 
-	if (timestamps.has(message.author.id)) {
+	if (timestamps.has(message.author.id) && message.author.id.toString() !== process.env.ownerId.toString()) {
 
 		const expirationTime = timestamps.get(message.author.id) + cooldownAmount
 
