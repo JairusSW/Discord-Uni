@@ -6,7 +6,7 @@ module.exports = {
     name: 'chat',
     description: 'Start a cleverbot instance',
 		guildOnly: false,
-    cooldown: (60 * 60) * 24,
+    cooldown: 0/*(60 * 60) * 24*/,
     async execute(message, args) {
 			let stopped = false
 			try {
